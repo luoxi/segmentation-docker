@@ -1,13 +1,13 @@
 help:
 	@cat Makefile
 
-DOCKER=nvidia-docker
+DOCKER=docker
 
 build:
 	docker build -t rossi/segmentation .
 
-bash: build
+bash:
 	$(DOCKER) run -it -v $(shell pwd):/workspace -w /workspace rossi/segmentation bash
 
-notebook: build
-	$(DOCKER) run -it -v $(shell pwd):/workspace -w /workspace rossi/segmentation
+notebook:
+	$(DOCKER) run -it -p 8888:8888 -v $(shell pwd):/workspace -w /workspace rossi/segmentation
