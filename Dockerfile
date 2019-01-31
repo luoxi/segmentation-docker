@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest
+FROM tensorflow/tensorflow:latest-gpu
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends python-pip python-dev vim libsm6 libxext6 libgtk2.0-dev \

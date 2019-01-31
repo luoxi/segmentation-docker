@@ -1,7 +1,7 @@
 help:
 	@cat Makefile
 
-DOCKER=docker
+DOCKER=nvidia-docker
 
 build:
 	docker build -t rossi/segmentation .
